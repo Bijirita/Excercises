@@ -13,21 +13,24 @@ let TextBox = document.getElementById("TextBox");
 const PressMe = document.getElementById("Press");
 PressMe.addEventListener("click", generate);
 
-function generate() {
-    let myArray = words.reduce((accumulator) => {
-        let index = Math.floor(Math.random() * words.length-1);
-        accumulator.push(words[index]);
-        return accumulator;
-    },[]);
-    console.log(myArray.join(' '));
+function generate () {
+    TextBox.textContent = myFilter.join(' ');
 }
 
+// function generate() {
+//     let myArray = words.reduce((accumulator) => {
+//         let index = Math.floor(Math.random() * words.length-1);
+//         accumulator.push(words[index]);
+//         return accumulator;
+//     },[]);
+//     console.log(myArray.join(' '));
+// }
 
 
-const filterThis = ["array", "should", "have", "at", "least", "five", "items"];
 
+const filterThis = ["array", "should", "have", "at", "least", "five", "items", "bart", "apostrophe", "hell"];
 
-
+let myFilter = filterThis.filter(item => item.includes('a') && item.length < 5);
 
 
 
